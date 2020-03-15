@@ -42,9 +42,17 @@ let calculator = (function() {
       .map(n => parseInt(n));
   }
   function sum(numbers) {
+    const negatives = [];
     const finalSum = numbers.reduce((sum, n) => {
+      if (n < 0) {
+        negatives.push(n);
+        return 0;
+      }
       return sum + n;
     }, 0);
+    if (negatives.length > 0) {
+      throw "negative numbers are bad";
+    }
 
     return finalSum;
   }

@@ -18,4 +18,9 @@ describe("stringCalculator.js", function() {
   it('should return 3 if input is "//;\\n1,2"', function() {
     expect(calculator.add("//;\n1;2")).toBe(3);
   });
+  it("should throw an exception if input is a negative number", function() {
+    expect(function() {
+      calculator.add("-1,2");
+    }).toThrow("negative numbers are bad");
+  });
 });
