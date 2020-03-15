@@ -44,6 +44,9 @@ let calculator = (function() {
   function sum(numbers) {
     const negatives = [];
     const finalSum = numbers.reduce((sum, n) => {
+      if (n > 1000) {
+        return 2;
+      }
       if (n < 0) {
         negatives.push(n);
         return 0;

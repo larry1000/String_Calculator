@@ -23,4 +23,10 @@ describe("stringCalculator.js", function() {
       calculator.add("-1,2");
     }).toThrow("negative numbers are bad");
   });
+  it('should return 2 if input is ">1000"', function() {
+    expect(calculator.add("1002")).toBe(2);
+  });
+  it('should return 7 if input is "//[;][***]\\n1;2***3***1"', function() {
+    expect(calculator.add("//[;][***]\n1;2***3***1")).toBe(7);
+  });
 });
